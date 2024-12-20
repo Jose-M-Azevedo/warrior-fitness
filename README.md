@@ -1,1 +1,1 @@
-#A simple front webpage for a fictional gym.
+# A simple front webpage for a fictional gym.
