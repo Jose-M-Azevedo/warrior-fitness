@@ -7,17 +7,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Swiper-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="shortcut icon"
       href="src/img/WF_favicon.png"
       type="image/x-icon"
     />
+
+    <!--Linking Swiper -->
     <script defer src="src/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="src/css/style.css" />
     <title>Warrior Fitness // Train like a Warrior</title>
   </head>
@@ -129,7 +140,136 @@
     <div class="divider"></div>
 
     <section class="trainers" id="trainers">
-      <div class="trainers-text">
+      <div class="trainers-title">
+        <h2 class="trainers-text-title">
+          WARRIOR FITNESS <br />PERSONAL TRAINERS
+        </h2>
+        <p class="trainers-count">6 Trainers</p>
+      </div>
+
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="swiper-item">
+              <div class="trainer-picture">
+                <img
+                  src="src/img/trainers/trainer-1.jpg"
+                  alt="Trainer image"
+                  class="trainer-img"
+                  id="trainer-1"
+                />
+              </div>
+              <div class="trainer-content">
+                <h2 class="trainer-name">Chris Bumstead</h2>
+                <p class="trainer-speciality">Bodybuilding</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-item">
+              <div class="trainer-picture">
+                <img
+                  src="src/img/trainers/trainer-1.jpg"
+                  alt="Trainer image"
+                  class="trainer-img"
+                  id="trainer-1"
+                />
+              </div>
+              <div class="trainer-content">
+                <h2 class="trainer-name">Chris Bumstead</h2>
+                <p class="trainer-speciality">Bodybuilding</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-item">
+              <div class="trainer-picture">
+                <img
+                  src="src/img/trainers/trainer-1.jpg"
+                  alt="Trainer image"
+                  class="trainer-img"
+                  id="trainer-1"
+                />
+              </div>
+              <div class="trainer-content">
+                <h2 class="trainer-name">Chris Bumstead</h2>
+                <p class="trainer-speciality">Bodybuilding</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-item">
+              <div class="trainer-picture">
+                <img
+                  src="src/img/trainers/trainer-1.jpg"
+                  alt="Trainer image"
+                  class="trainer-img"
+                  id="trainer-1"
+                />
+              </div>
+              <div class="trainer-content">
+                <h2 class="trainer-name">Chris Bumstead</h2>
+                <p class="trainer-speciality">Bodybuilding</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-item">
+              <div class="trainer-picture">
+                <img
+                  src="src/img/trainers/trainer-1.jpg"
+                  alt="Trainer image"
+                  class="trainer-img"
+                  id="trainer-1"
+                />
+              </div>
+              <div class="trainer-content">
+                <h2 class="trainer-name">Chris Bumstead</h2>
+                <p class="trainer-speciality">Bodybuilding</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-item">
+              <div class="trainer-picture">
+                <img
+                  src="src/img/trainers/trainer-1.jpg"
+                  alt="Trainer image"
+                  class="trainer-img"
+                  id="trainer-1"
+                />
+              </div>
+              <div class="trainer-content">
+                <h2 class="trainer-name">Chris Bumstead</h2>
+                <p class="trainer-speciality">Bodybuilding</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-item">
+              <div class="trainer-picture">
+                <img
+                  src="src/img/trainers/trainer-1.jpg"
+                  alt="Trainer image"
+                  class="trainer-img"
+                  id="trainer-1"
+                />
+              </div>
+              <div class="trainer-content">
+                <h2 class="trainer-name">Chris Bumstead</h2>
+                <p class="trainer-speciality">Bodybuilding</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button swiper-button-prev"></div>
+        <div class="swiper-button swiper-button-next"></div>
+      </div>
+      <!-- <div class="trainers-text">
         <h2 class="trainers-text-title">Meet our trainers</h2>
         <p class="trainers-text-count">6 trainers</p>
       </div>
@@ -259,7 +399,7 @@
         </div>
       </div>
       <button class="slider__btn slider__btn--left">&larr;</button>
-      <button class="slider__btn slider__btn--right">&rarr;</button>
+      <button class="slider__btn slider__btn--right">&rarr;</button> -->
     </section>
   </body>
 </html>

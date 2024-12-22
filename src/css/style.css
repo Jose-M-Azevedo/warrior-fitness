@@ -185,116 +185,106 @@ p {
 }
 
 /* Trainers*/
-.trainers-text {
-  width: 82%;
+.trainers-title {
+  width: 70%;
   margin: auto;
+  margin-bottom: 3%;
 }
 
-.trainers-text-count {
-  font-size: 1.8rem;
+.trainers-text-title {
+  font-size: 45px;
+  line-height: 50px;
 }
 
-.slider {
-  max-width: 100rem;
-  height: 35rem;
-  margin: auto;
-  position: relative;
-  display: flex;
+.trainers-title .trainers-count {
+  font-size: 25px;
+  line-height: 40px;
+}
 
-  /* IN THE END */
+.swiper {
+  margin-top: -1%;
+  text-align: center;
+  width: 70%;
+  height: 100%;
+}
+
+.swiper-item {
+  padding: 30px 0 40px;
+  margin-bottom: 30px;
+  background-color: grey;
+  text-align: center;
   overflow: hidden;
+  position: relative;
+  box-shadow: 0px 10px rgba(0, 0, 0, 0.2);
+  border: solid 2px rgba(0, 0, 0, 0.9);
 }
 
-.slide {
+.swiper-item .trainer-picture {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  margin-bottom: 45px;
+  z-index: 1;
+  position: relative;
+}
+
+.swiper-item .trainer-picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.8;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.swiper-item:hover .trainer-picture::before {
+  height: 100%;
+}
+
+.swiper-item .trainer-picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: black;
   position: absolute;
   top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.swiper-item img {
   width: 100%;
-  height: 35rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  /* THIS creates the animation! */
-  transition: transform 1s;
-}
-
-.info-trainer-button {
-  font-size: 1.5rem;
-  padding: 10px 35px;
-  color: #030728;
-  border-radius: 6px;
-  font-weight: 200;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid transparent;
-  transition: 0.2s ease;
-}
-
-.info-trainer-button:hover {
-  background: grey;
-  border: 1px solid #fff;
-  color: #fff;
-}
-
-.trainer-img {
-  width: 200px;
-  height: 200px;
+  height: auto;
   border-radius: 50%;
-  margin-bottom: 30px;
-  border: 3px solid grey;
-  padding: 3px;
-  object-fit: cover;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
 }
 
-.trainer-slide {
-  width: auto;
-  padding: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 10px;
-
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid grey;
+.swiper-item:hover .trainer-picture img {
+  box-shadow: 0 0 0 14px grey;
+  transform: scale(0.7);
 }
 
-.trainer-name {
-  font-size: 2.5rem;
-  color: #e3e3e3;
-  font-weight: 300;
+.swiper-item .trainer-speciality {
+  display: block;
+  font-size: 15px;
+  color: #4e5052;
+  text-transform: capitalize;
 }
 
-.trainer-specialty {
-  font-size: 1.5rem;
-  color: #e3e3e3;
-  font-weight: 200;
-  margin: 1px 0 30px;
+.swiper-item .trainer-name {
+  display: block;
+  font-size: 30px;
+  text-transform: capitalize;
 }
 
-.slider__btn {
-  position: absolute;
-  top: 360vh;
-  z-index: 10;
-
-  border: none;
-  background: none;
-  font-family: inherit;
-  color: #fff;
-  border-radius: 50%;
-  height: 5.5rem;
-  width: 5.5rem;
-  font-size: 3.25rem;
-  cursor: pointer;
-}
-
-.slider__btn--left {
-  left: 6%;
-  transform: translate(-50%, -50%);
-}
-
-.slider__btn--right {
-  right: 6%;
-  transform: translate(50%, -50%);
+.swiper-button {
+  color: white;
 }
