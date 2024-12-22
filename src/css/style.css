@@ -55,9 +55,9 @@ a:visited {
 }
 
 .nav_logo {
-  height: 6rem;
-  margin-left: 10px;
-  margin-bottom: 5px;
+  padding-left: 15px;
+  width: 100px;
+  height: 100px;
 }
 
 .section-link:link,
@@ -132,56 +132,99 @@ p {
   text-align: left;
 }
 
+.about-us-description {
+  font-size: 2rem;
+}
+
 .join-us-link {
   font-weight: 500;
 }
 
 /* Installations */
-.installations {
-  width: 70%;
-  margin: 0 auto;
-  padding-top: 2%;
+.gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 2%;
-  row-gap: 0.5%;
+  place-items: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
 }
 
-.media-container {
-  position: relative;
-  text-align: center;
-}
-
-.inst-desc {
-  position: absolute;
-  top: 2%;
-  left: 4%;
-  font-size: 2rem;
-  font-weight: 200;
-}
-
-.inst-img {
+ul {
+  display: flex;
   width: 100%;
-  border: solid grey;
-  border-radius: 5%;
-  filter: brightness(0.8);
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
-.media-container:hover {
-  .inst-img {
-    filter: brightness(1);
-  }
-
-  .inst-desc {
-    font-weight: 300;
-  }
+li {
+  padding: 0;
 }
 
-/* Phone size optimizations*/
-@media only screen and (max-width: 768px) {
-  .installations {
-    grid-template-columns: auto;
-  }
+img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.2s ease;
+}
+
+ul:is(:hover, :focus-within) img {
+  opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
+  filter: grayscale(calc(1 - var(--active-lerp, 0)));
+}
+
+:root {
+  --lerp-0: 1;
+  --lerp-1: 0.5787037;
+  --lerp-2: 0.2962963;
+  --lerp-3: 0.125;
+  --lerp-4: 0.037037;
+  --lerp-5: 0.0046296;
+  --lerp-6: 0;
+}
+
+a {
+  outline-offset: 4px;
+}
+
+li {
+  flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+  transition: flex 0.2s ease;
+}
+
+li:is(:hover, :focus-within) {
+  --active-lerp: var(--lerp-0);
+  z-index: 7;
+}
+li:has(+ li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li {
+  --active-lerp: var(--lerp-1);
+  z-index: 6;
+}
+li:has(+ li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li {
+  --active-lerp: var(--lerp-2);
+  z-index: 5;
+}
+li:has(+ li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li {
+  --active-lerp: var(--lerp-3);
+  z-index: 4;
+}
+li:has(+ li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li {
+  --active-lerp: var(--lerp-4);
+  z-index: 3;
+}
+li:has(+ li + li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li + li {
+  --active-lerp: var(--lerp-5);
+  z-index: 2;
+}
+li:has(+ li + li + li + li + li + li:is(:hover, :focus-within)),
+li:is(:hover, :focus-within) + li + li + li + li + li + li {
+  --active-lerp: var(--lerp-6);
+  z-index: 1;
 }
 
 /* Trainers*/
@@ -211,7 +254,8 @@ p {
 .swiper-item {
   padding: 30px 0 40px;
   margin-bottom: 30px;
-  background-color: grey;
+  background-color: rgb(128, 128, 128, 0.3);
+
   text-align: center;
   overflow: hidden;
   position: relative;

@@ -13,6 +13,7 @@ setInterval(() => {
   }, delay);
 }, delay);
 
+// Swiper
 const swiper = new Swiper(".swiper", {
   loop: true,
   slidesPerView: 4,
