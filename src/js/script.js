@@ -13,11 +13,9 @@ setInterval(() => {
   }, delay);
 }, delay);
 
-// Swiper
+// Swiper options
 const swiper = new Swiper(".swiper", {
   loop: true,
-  slidesPerView: 4,
-  spaceBetween: 20,
 
   // Navigation arrows
   navigation: {
@@ -28,5 +26,23 @@ const swiper = new Swiper(".swiper", {
   // And if we need scrollbar
   scrollbar: {
     el: ".swiper-scrollbar",
+  },
+
+  breakpoints: {
+    480: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1080: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
   },
 });

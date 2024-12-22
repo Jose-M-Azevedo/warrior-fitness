@@ -332,3 +332,33 @@ li:is(:hover, :focus-within) + li + li + li + li + li + li {
 .swiper-button {
   color: white;
 }
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .about-us-description {
+    font-size: 1.2rem;
+  }
+
+  .trainers-text-title {
+    font-size: 2rem;
+  }
+
+  .trainers-title .trainers-count {
+    font-size: 1.2rem;
+  }
+
+  .header-title-hero {
+    font-size: 3rem;
+  }
+
+  .nav-links {
+    opacity: 0;
+  }
+}
