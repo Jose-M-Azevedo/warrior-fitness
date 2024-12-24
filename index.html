@@ -25,10 +25,12 @@
       type="image/x-icon"
     />
 
+    <!-- Google Maps-->
+
     <!--Linking Swiper -->
-    <script defer src="src/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script defer src="src/js/script.js"></script>
     <link rel="stylesheet" href="src/css/style.css" />
     <title>Warrior Fitness // Train like a Warrior</title>
   </head>
@@ -65,7 +67,9 @@
         </div>
       </div>
     </header>
-    <div class="divider-about divider"></div>
+
+    <div class="divider-about"></div>
+
     <section class="about-us" id="about-us">
       <div class="about-us-container">
         <h2 class="about-us-title">BECOME A WARRIOR</h2>
@@ -182,7 +186,7 @@
       </ul>
     </section>
 
-    <div class="divider"></div>
+    <div class="divider-sections"></div>
 
     <section class="trainers" id="trainers">
       <div class="trainers-title">
@@ -314,137 +318,47 @@
         <div class="swiper-button swiper-button-prev"></div>
         <div class="swiper-button swiper-button-next"></div>
       </div>
-      <!-- <div class="trainers-text">
-        <h2 class="trainers-text-title">Meet our trainers</h2>
-        <p class="trainers-text-count">6 trainers</p>
-      </div>
-
-      <div class="slider">
-        <div class="slide">
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-1.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-2.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-3.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-4.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-1.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-1.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-1.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-1.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-1.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-
-          <div class="trainer-slide">
-            <img
-              src="src/img/trainers/trainer-1.jpg"
-              alt="Trainer image"
-              class="trainer-img"
-              id="trainer-1"
-            />
-            <h2 class="trainer-name">Chris Bumstead</h2>
-            <p class="trainer-specialty">Bodybuilding</p>
-            <button class="info-trainer-button">More info</button>
-          </div>
-        </div>
-        </div>
-      </div>
-      <button class="slider__btn slider__btn--left">&larr;</button>
-      <button class="slider__btn slider__btn--right">&rarr;</button> -->
     </section>
+
+    <div class="divider-sections"></div>
+
+    <section class="location">
+      <div class="location-container">
+        <div class="location-info">
+          <h2 class="location-title">Find us here 👋</h2>
+          <div class="location-text">
+            <div class="address">
+              <p class="location-bold bold">Address:</p>
+              <p class="location-address">
+                Travessa de Faro, Carcavelos, 2775-541, Portugal
+              </p>
+              <a
+                target="_blank"
+                href="https://www.google.pt/maps/dir//Tv.+Faro,+Rebelva,+Carcavelos/@38.6978242,-9.3404887,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd1ecf34abc4d28d:0x9d6120cb2f740017!2m2!1d-9.3397162!2d38.6977028?hl=pt-PT&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+                class="location-address-button"
+                >DIRECTIONS</a
+              >
+            </div>
+
+            <div class="divider-location"></div>
+
+            <div class="hours">
+              <p class="hours-title bold">Hours 🕒</p>
+              <p class="hours-open">
+                <span class="bold">MON-FRI:</span> 06:00 - 23:00
+              </p>
+              <p class="hours-open">
+                <span class="bold">SAT:</span> 8:00 - 21:00
+              </p>
+              <p class="hours-open">
+                <span class="bold">DOM:</span> 8:00 - 15:00
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="location-map"></div>
+      </div>
+    </section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIMpTF3sS9TWgEujNkfhMiQNx1izuCmWA&callback=myMap"></script>
   </body>
 </html>

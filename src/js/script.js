@@ -46,3 +46,29 @@ const swiper = new Swiper(".swiper", {
     },
   },
 });
+
+// Google Maps
+
+let map;
+
+const initMap = async function () {
+  const myMap = document.querySelector(".location-map");
+  const position = { lat: 38.697776794433594, lng: -9.339737892150879 };
+
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  map = new Map(myMap, {
+    zoom: 17,
+    center: position,
+    mapId: "MAP-ID",
+  });
+
+  const marker = new AdvancedMarkerElement({
+    map: map,
+    position: position,
+    title: "Warrior Gym",
+  });
+};
+
+initMap();
