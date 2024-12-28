@@ -25,11 +25,50 @@
       type="image/x-icon"
     />
 
-    <!-- Google Maps-->
-
     <!--Linking Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <!-- Google Maps-->
+    <script>
+      (g => {
+        var h,
+          a,
+          k,
+          p = "The Google Maps JavaScript API",
+          c = "google",
+          l = "importLibrary",
+          q = "__ib__",
+          m = document,
+          b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}),
+          r = new Set(),
+          e = new URLSearchParams(),
+          u = () =>
+            h ||
+            (h = new Promise(async (f, n) => {
+              await (a = m.createElement("script"));
+              e.set("libraries", [...r] + "");
+              for (k in g)
+                e.set(
+                  k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()),
+                  g[k]
+                );
+              e.set("callback", c + ".maps." + q);
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = () => (h = n(Error(p + " could not load.")));
+              a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+              m.head.append(a);
+            }));
+        d[l]
+          ? console.warn(p + " only loads once. Ignoring:", g)
+          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+      })({
+        key: "AIzaSyBIMpTF3sS9TWgEujNkfhMiQNx1izuCmWA",
+        v: "weekly",
+      });
+    </script>
+    <!--  -->
     <script defer src="src/js/script.js"></script>
     <link rel="stylesheet" href="src/css/style.css" />
     <title>Warrior Fitness // Train like a Warrior</title>
@@ -46,16 +85,16 @@
           />
           <ul class="nav-links">
             <li class="nav-link">
-              <a class="section-link" href="#about-us">About Us</a>
-            </li>
-            <li class="nav-link">
-              <a class="section-link" href="#installations">Installations</a>
+              <a class="section-link" href="#club">Club</a>
             </li>
             <li class="nav-link">
               <a class="section-link" href="#trainers">Trainers</a>
             </li>
             <li class="nav-link">
-              <a class="section-link" href="#pricing">Pricing</a>
+              <a class="section-link" href="#pricing">Memberships</a>
+            </li>
+            <li class="nav-link">
+              <a class="section-link" href="#location">Location</a>
             </li>
           </ul>
         </nav>
@@ -70,7 +109,7 @@
 
     <div class="divider-about"></div>
 
-    <section class="about-us" id="about-us">
+    <section class="about-us section" id="about-us">
       <div class="about-us-container">
         <h2 class="about-us-title">BECOME A WARRIOR</h2>
         <p class="about-us-description">
@@ -85,7 +124,7 @@
       </div>
     </section>
 
-    <section class="gallery">
+    <section class="gallery section">
       <ul class="results">
         <li class="result">
           <img
@@ -188,7 +227,7 @@
 
     <div class="divider-sections"></div>
 
-    <section class="trainers" id="trainers">
+    <section class="trainers section" id="trainers">
       <div class="trainers-title">
         <h2 class="trainers-text-title">
           WARRIOR FITNESS <br />PERSONAL TRAINERS
@@ -322,7 +361,7 @@
 
     <div class="divider-sections"></div>
 
-    <section class="location">
+    <section class="location section" id="location">
       <div class="location-container">
         <div class="location-info">
           <h2 class="location-title">Find us here 👋</h2>
@@ -359,6 +398,57 @@
         <div class="location-map"></div>
       </div>
     </section>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIMpTF3sS9TWgEujNkfhMiQNx1izuCmWA&callback=myMap"></script>
+
+    <footer>
+      <div class="footer-sections">
+        <div class="gym-links">
+          <h2 class="footer-section-title">GYM</h2>
+          <ul class="footer-items">
+            <li class="footer-item">
+              <a class="item-link" href="#about-us">Club</a>
+            </li>
+            <li class="footer-item">
+              <a class="item-link" href="#trainers">Trainers</a>
+            </li>
+            <li class="footer-item">
+              <a class="item-link" href="#pricing">Memberships</a>
+            </li>
+            <li class="footer-item">
+              <a class="item-link" href="#location">Location</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="gym-socials">
+          <h2 class="footer-section-title">FOLLOW US</h2>
+          <ul class="footer-items">
+            <li class="footer-item">
+              <img src="src/img/icons/icon-whatsapp.png" />
+              <a class="item-link" href="https://web.whatsapp.com/"
+                ><span>+351 999 999 999</span></a
+              >
+            </li>
+            <li class="footer-item">
+              <img src="src/img/icons/icon-instagram.png" />
+              <a class="item-link" href="https://www.instagram.com/"
+                ><span>@warriorgymofficial</span></a
+              >
+            </li>
+            <li class="footer-item">
+              <img src="src/img/icons/icon-email.png" />
+              <a class="item-link" href="mailto:webmaster@example.com"
+                ><span>warriorgym@gmail.com</span></a
+              >
+            </li>
+            <li class="footer-item">
+              <img src="src/img/icons/icon-youtube.png" />
+              <a class="item-link" href="https://www.youtube.com/"
+                ><span>Warrior Gym</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
