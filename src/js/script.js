@@ -1,3 +1,7 @@
+"use strict";
+
+const nav = document.querySelector(".nav");
+
 // Swiper options
 const swiper1 = new Swiper(".swiper-container-2", {
   loop: true,
@@ -68,44 +72,77 @@ const initMap = async function () {
 
 initMap();
 
-// TEST GALLERY
-$(function () {
-  $(".img-w").each(function () {
-    $(this).wrap("<div class='img-c'></div>");
-    let imgSrc = $(this).find("img").attr("src");
-    $(this).css("background-image", "url(" + imgSrc + ")");
+///////////////////////////////////////
+// Menu fade animation
+const handleHover = function (e) {
+  if (e.target.classList.contains("section-link")) {
+    const link = e.target;
+    const siblings = link.closest(".nav").querySelectorAll(".section-link");
+    const logo = link.closest(".nav").querySelector("img");
+    console.log(link);
+    console.log(siblings);
+    console.log(logo);
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+
+// Lazy loading image
+const imageContainer = document.getElementById("gallery-image");
+
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const lazyImage = entry.target;
+      lazyImage.setAttribute("src", lazyImage.getAttribute("data-src"));
+      // lazyImage.src = lazyImage.dataset.src;
+      entry.target.addEventListener("load", function () {
+        entry.target.classList.remove("lazy-img");
+      });
+      observer.unobserve(lazyImage);
+    }
   });
+}
 
-  $(".img-c").click(function () {
-    let w = $(this).outerWidth();
-    let h = $(this).outerHeight();
-    let x = $(this).offset().left;
-    let y = $(this).offset().top;
+function createObserver() {
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
 
-    $(".active").not($(this)).remove();
-    let copy = $(this).clone();
-    copy.insertAfter($(this)).height(h).width(w).delay(500).addClass("active");
-    $(".active").css("top", y - 8);
-    $(".active").css("left", x - 8);
+  const observer = new IntersectionObserver(handleIntersection, options);
 
-    setTimeout(function () {
-      copy.addClass("positioned");
-    }, 0);
+  // Observe each image in the container
+  document.querySelectorAll(".img-box img").forEach(img => {
+    observer.observe(img);
   });
-});
-//---------------
+}
 
-$(document).on("click", ".img-c.active", function () {
-  let copy = $(this);
-  copy.removeClass("positioned active").addClass("postactive");
-  setTimeout(function () {
-    copy.remove();
-  }, 500);
-});
+// Create Intersection Observer when the document is ready
+document.addEventListener("DOMContentLoaded", createObserver);
 
-// events
+// Events
 
-// reload when window is resized
+// Reload when window is resized
 window.onresize = function (event) {
   document.location.reload(true);
 };
+
+// Passing "argument" into handler - menu fade animation
+nav.addEventListener("mouseover", handleHover.bind(0.5));
+nav.addEventListener("mouseout", handleHover.bind(1));
+
+// Smooth navigation
+document.querySelector(".nav-links").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  // Matching strategy
+  if (e.target.classList.contains("section-link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
+});

@@ -53,6 +53,7 @@ a:visited {
   padding-left: 15px;
   width: 100px;
   height: 100px;
+  transition: all 0.3s;
 }
 
 .section-link:link,
@@ -60,6 +61,7 @@ a:visited {
   font-size: 1.3rem;
   display: block;
   font-weight: 100;
+  transition: all 0.3s;
 }
 
 /* BACKGROUND IMAGE*/
@@ -127,6 +129,10 @@ h2 {
 }
 
 /* Gallery */
+
+.lazy-img {
+  filter: blur(10px);
+}
 
 .gallery {
   margin-top: 2%;
