@@ -1,20 +1,5 @@
-const headerHeroTitleChange = document.querySelector("#hero-content");
-const delay = 2000;
-let count = 0;
-
-setInterval(() => {
-  const wordsArr = ["MADE", "BORN", "FORGED"];
-  const tm = setTimeout(function () {
-    headerHeroTitleChange.textContent = wordsArr[count++];
-    if (count === wordsArr.length) {
-      clearInterval(tm);
-      count = 0;
-    }
-  }, delay);
-}, delay);
-
 // Swiper options
-const swiper = new Swiper(".swiper", {
+const swiper1 = new Swiper(".swiper-container-2", {
   loop: true,
 
   // Navigation arrows
@@ -47,6 +32,16 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
+const swiper2 = new Swiper(".swiper-container-1", {
+  loop: true,
+  slidesPerView: 1,
+  allowTouchMove: false,
+
+  autoplay: {
+    delay: 2000,
+  },
+});
+
 // Google Maps
 
 let map;
@@ -72,3 +67,45 @@ const initMap = async function () {
 };
 
 initMap();
+
+// TEST GALLERY
+$(function () {
+  $(".img-w").each(function () {
+    $(this).wrap("<div class='img-c'></div>");
+    let imgSrc = $(this).find("img").attr("src");
+    $(this).css("background-image", "url(" + imgSrc + ")");
+  });
+
+  $(".img-c").click(function () {
+    let w = $(this).outerWidth();
+    let h = $(this).outerHeight();
+    let x = $(this).offset().left;
+    let y = $(this).offset().top;
+
+    $(".active").not($(this)).remove();
+    let copy = $(this).clone();
+    copy.insertAfter($(this)).height(h).width(w).delay(500).addClass("active");
+    $(".active").css("top", y - 8);
+    $(".active").css("left", x - 8);
+
+    setTimeout(function () {
+      copy.addClass("positioned");
+    }, 0);
+  });
+});
+//---------------
+
+$(document).on("click", ".img-c.active", function () {
+  let copy = $(this);
+  copy.removeClass("positioned active").addClass("postactive");
+  setTimeout(function () {
+    copy.remove();
+  }, 500);
+});
+
+// events
+
+// reload when window is resized
+window.onresize = function (event) {
+  document.location.reload(true);
+};
