@@ -130,10 +130,6 @@ h2 {
 
 /* Gallery */
 
-.lazy-img {
-  filter: blur(10px);
-}
-
 .gallery {
   margin-top: 2%;
 }

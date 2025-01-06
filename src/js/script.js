@@ -97,11 +97,10 @@ function handleIntersection(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const lazyImage = entry.target;
-      lazyImage.setAttribute("src", lazyImage.getAttribute("data-src"));
-      // lazyImage.src = lazyImage.dataset.src;
-      entry.target.addEventListener("load", function () {
-        entry.target.classList.remove("lazy-img");
-      });
+      console.log(entry.target);
+      lazyImage.src = lazyImage.dataset.src;
+      // lazyImage.setAttribute("src", lazyImage.getAttribute("data-src"));
+      entry.target.addEventListener("load", function () {});
       observer.unobserve(lazyImage);
     }
   });
@@ -117,7 +116,7 @@ function createObserver() {
   const observer = new IntersectionObserver(handleIntersection, options);
 
   // Observe each image in the container
-  document.querySelectorAll(".img-box img").forEach(img => {
+  document.querySelectorAll(".gallery-image img").forEach(img => {
     observer.observe(img);
   });
 }

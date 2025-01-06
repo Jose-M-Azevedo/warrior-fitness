@@ -2,6 +2,7 @@
   "name": "warrior-fitness",
   "version": "1.0.0",
   "description": "A gym landing page",
+  "homepage": "/",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist --no-optimize"
