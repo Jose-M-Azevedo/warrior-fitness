@@ -91,38 +91,38 @@ const handleHover = function (e) {
 };
 
 // Lazy loading image
-const imageContainer = document.getElementById("gallery-image");
+// const imageContainer = document.getElementById("gallery-image");
 
-function handleIntersection(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const lazyImage = entry.target;
-      console.log(entry.target);
-      lazyImage.src = lazyImage.dataset.src;
-      // lazyImage.setAttribute("src", lazyImage.getAttribute("data-src"));
-      entry.target.addEventListener("load", function () {});
-      observer.unobserve(lazyImage);
-    }
-  });
-}
+// function handleIntersection(entries, observer) {
+//   entries.forEach(entry => {
+//     if (!entry.isIntersecting) return;
 
-function createObserver() {
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  };
+//     const lazyImage = entry.target;
+//     console.log(entry.target);
+//     lazyImage.src = lazyImage.dataset.src;
+//     // lazyImage.setAttribute("src", lazyImage.getAttribute("data-src"));
+//     // entry.target.addEventListener("load", function () {});
+//     observer.unobserve(lazyImage);
+//   });
+// }
 
-  const observer = new IntersectionObserver(handleIntersection, options);
+// function createObserver() {
+//   const options = {
+//     root: null,
+//     rootMargin: "0px",
+//     threshold: 0.5,
+//   };
 
-  // Observe each image in the container
-  document.querySelectorAll(".gallery-image img").forEach(img => {
-    observer.observe(img);
-  });
-}
+//   const observer = new IntersectionObserver(handleIntersection, options);
 
-// Create Intersection Observer when the document is ready
-document.addEventListener("DOMContentLoaded", createObserver);
+//   // Observe each image in the container
+//   document.querySelectorAll(".gallery-image img").forEach(img => {
+//     observer.observe(img);
+//   });
+// }
+
+// // Create Intersection Observer when the document is ready
+// document.addEventListener("DOMContentLoaded", createObserver);
 
 // Events
 

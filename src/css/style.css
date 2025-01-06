@@ -50,8 +50,8 @@ a:visited {
 }
 
 .nav_logo {
-  padding-left: 15px;
-  width: 100px;
+  padding: 5px;
+  width: 150px;
   height: 100px;
   transition: all 0.3s;
 }
@@ -86,7 +86,7 @@ h1 {
 }
 
 h2 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 3.5rem;
 }
 
